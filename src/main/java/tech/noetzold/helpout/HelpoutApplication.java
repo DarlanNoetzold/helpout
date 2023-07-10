@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelpoutApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(HelpoutApplication.class, args);
 	}
 
