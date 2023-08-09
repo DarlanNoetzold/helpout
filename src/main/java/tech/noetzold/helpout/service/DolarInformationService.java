@@ -1,4 +1,4 @@
 package tech.noetzold.helpout.service;
 
-public class DolarInformationService ssssssssssssssss{
+public class DolarInformationService{
 }
