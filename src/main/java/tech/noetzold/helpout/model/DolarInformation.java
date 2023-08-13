@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "dolar_information")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
