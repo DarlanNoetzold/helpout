@@ -3,16 +3,16 @@ package tech.noetzold.helpout.command;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
-import tech.noetzold.helpout.service.DolarInformationService;
+import tech.noetzold.helpout.service.DolarService;
 
 import java.math.BigDecimal;
 
 @ShellComponent
 public class DolarCommand {
-    private final DolarInformationService dolarService;
+    private final DolarService dolarService;
 
     @Autowired
-    public DolarCommand(DolarInformationService dolarService) {
+    public DolarCommand(DolarService dolarService) {
         this.dolarService = dolarService;
     }
 
