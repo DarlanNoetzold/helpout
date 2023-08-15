@@ -1,9 +1,20 @@
 package tech.noetzold.helpout.model;
 
-public class DolarResponse {
-    private DolarValue USD;
 
-    public DolarValue getUSD() {
-        return USD;
-    }
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Entity
+public class DolarResponse {
+
+    @JsonProperty("USDBRL")
+    private DolarValue USDBRL;
 }
