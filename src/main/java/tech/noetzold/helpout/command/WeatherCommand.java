@@ -6,6 +6,8 @@ import org.springframework.shell.standard.ShellMethod;
 import tech.noetzold.helpout.model.WeatherResponse;
 import tech.noetzold.helpout.service.WeatherPredictService;
 
+import java.math.BigDecimal;
+
 @ShellComponent
 public class WeatherCommand {
     private final WeatherPredictService weatherService;
@@ -21,7 +23,15 @@ public class WeatherCommand {
         String lon = "-52.4083";
         String appid = "1472b7ec49efc4bf9eabbdb1026f3cea";
         WeatherResponse weatherResponse = weatherService.getWeather(lat, lon, appid);
-
+        weatherResponse = convertKelvin(weatherResponse);
         return weatherResponse.getMain().toString();
+    }
+
+    public WeatherResponse convertKelvin(WeatherResponse weatherResponse){
+        weatherResponse.getMain().setTemp(weatherResponse.getMain().getTemp().subtract(new BigDecimal("273.15")));
+        weatherResponse.getMain().setTemp_max(weatherResponse.getMain().getTemp_max().subtract(new BigDecimal("273.15")));
+        weatherResponse.getMain().setTemp_min(weatherResponse.getMain().getTemp_min().subtract(new BigDecimal("273.15")));
+
+        return weatherResponse;
     }
 }
