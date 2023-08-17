@@ -18,7 +18,25 @@ public class DolarCommand {
 
     @ShellMethod("Mostra a cotação atual do dólar em reais.")
     public void dolar() {
+        System.out.print("Obtendo cotação do dólar  ");
+        animateLoading();
+
         BigDecimal dolarRate = dolarService.getDolarRate();
-        System.out.println("Cotação do dólar: " + dolarRate.toString());
+        String formattedDolarRate = String.format("%.2f", dolarRate);
+
+        System.out.println("\nCotação do dólar: " + formattedDolarRate + " R$");
+    }
+
+    private void animateLoading() {
+        String[] animationFrames = {"|", "/", "-", "\\"};
+        for (int i = 0; i < 10; i++) {
+            try {
+                Thread.sleep(100);
+                System.out.print("\b" + animationFrames[i % animationFrames.length]);
+                System.out.flush();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 }
