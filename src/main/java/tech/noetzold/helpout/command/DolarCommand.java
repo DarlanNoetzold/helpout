@@ -18,7 +18,7 @@ public class DolarCommand {
 
     @ShellMethod("Mostra a cotação atual do dólar em reais.")
     public void dolar() {
-        System.out.print("Obtendo cotação do dólar  ");
+        System.out.print("Obtendo cotação do dólar   ");
         animateLoading();
 
         BigDecimal dolarRate = dolarService.getDolarRate();
