@@ -17,14 +17,14 @@ public class DolarCommand {
     }
 
     @ShellMethod("Mostra a cotação atual do dólar em reais.")
-    public void dolar() {
+    public String dolar() {
         System.out.print("Obtendo cotação do dólar   ");
         animateLoading();
 
         BigDecimal dolarRate = dolarService.getDolarRate();
         String formattedDolarRate = String.format("%.2f", dolarRate);
 
-        System.out.println("\nCotação do dólar: " + formattedDolarRate + " R$");
+        return "\nCotação do dólar: " + formattedDolarRate + " R$";
     }
 
     private void animateLoading() {
