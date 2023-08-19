@@ -31,6 +31,7 @@ public class WeatherCommand {
         weatherResponse.getMain().setTemp(weatherResponse.getMain().getTemp().subtract(new BigDecimal("273.15")));
         weatherResponse.getMain().setTemp_max(weatherResponse.getMain().getTemp_max().subtract(new BigDecimal("273.15")));
         weatherResponse.getMain().setTemp_min(weatherResponse.getMain().getTemp_min().subtract(new BigDecimal("273.15")));
+        weatherResponse.getMain().setFeels_like(weatherResponse.getMain().getFeels_like().subtract(new BigDecimal("273.15")));
 
         return weatherResponse;
     }
