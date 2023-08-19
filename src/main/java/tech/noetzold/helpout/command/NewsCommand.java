@@ -16,13 +16,13 @@ public class NewsCommand {
     }
 
     @ShellMethod("Mostra as notícias.")
-    public void news() {
+    public String news() {
         System.out.print("Obtendo notícias   ");
         animateLoading();
 
         String news = newsService.getNews();
 
-        System.out.println("\nNoticicias: " + news + " R$");
+        return "\nNoticicias: " + news + " R$";
     }
 
     private void animateLoading() {
