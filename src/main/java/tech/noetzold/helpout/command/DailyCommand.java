@@ -26,7 +26,10 @@ public class DailyCommand {
         String weather = new WeatherCommand(weatherService).weather();
         String news = new NewsCommand(newsService).news();
         String dolar = new DolarCommand(dolarService).dolar();
-        
+
+        return dolar +"\n" +
+                weather + "\n " +
+                news +"\n";
     }
 
 
