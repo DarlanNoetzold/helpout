@@ -3,7 +3,6 @@ package tech.noetzold.helpout.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.Entity;
 import java.math.BigDecimal;
@@ -11,7 +10,6 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 public class WeatherPredict {
 
@@ -24,4 +22,9 @@ public class WeatherPredict {
     private int sea_level;
     private int grnd_level;
 
+
+    @Override
+    public String toString() {
+        return "Temperatura de " + temp + " sensação térmica de " + feels_like + " humidade. Temperatura mínima de " + temp_min + " e máxima de " + temp_max;
+    }
 }
