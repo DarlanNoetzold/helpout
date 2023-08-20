@@ -1,20 +1,20 @@
 package tech.noetzold.helpout.model;
 
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import javax.persistence.*;
 
-import javax.persistence.Entity;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Entity
-public class ItemTodoModel {
+public class ItemTodoModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
