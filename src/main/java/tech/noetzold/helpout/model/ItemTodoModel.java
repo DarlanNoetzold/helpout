@@ -14,7 +14,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "item_todo_model")
 public class ItemTodoModel implements Serializable {
 
     @Id

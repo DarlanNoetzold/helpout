@@ -15,7 +15,7 @@ public class NewsCommand {
         this.newsService = newsService;
     }
 
-    @ShellMethod("Mostra as notícias.")
+    @ShellMethod("Show the news")
     public String news() {
         System.out.print("Obtendo notícias   ");
         animateLoading();

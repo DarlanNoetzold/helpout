@@ -16,7 +16,7 @@ public class DolarCommand {
         this.dolarService = dolarService;
     }
 
-    @ShellMethod("Mostra a cotação atual do dólar em reais.")
+    @ShellMethod("Shows the Dolar cotation")
     public String dolar() {
         System.out.print("Obtendo cotação do dólar   ");
         animateLoading();

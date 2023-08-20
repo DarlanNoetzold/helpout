@@ -8,9 +8,6 @@ import tech.noetzold.helpout.repository.CategoryTodoRepository;
 import tech.noetzold.helpout.repository.ItemTodoRepository;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
-import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
