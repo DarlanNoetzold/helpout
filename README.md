@@ -18,6 +18,7 @@
 
 ## Como utilizar:
 * Segue os comandos configurados:
+
 <img width="547" alt="image" src="https://github.com/DarlanNoetzold/helpout/assets/41628589/d9fccf6d-d4e0-44cf-b258-99b85906bda2">
 
 ---
