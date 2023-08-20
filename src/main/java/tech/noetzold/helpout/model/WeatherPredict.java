@@ -1,18 +1,21 @@
 package tech.noetzold.helpout.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
 import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class WeatherPredict {
 
+    private Long id;
     private BigDecimal temp;
     private BigDecimal feels_like;
     private BigDecimal temp_min;
