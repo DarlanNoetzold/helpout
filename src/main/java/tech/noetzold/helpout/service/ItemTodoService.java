@@ -22,13 +22,19 @@ public class ItemTodoService {
         return itemTodoRepository.findById(id).orElse(null);
     }
 
-    public String deleteItemTodoById(Long id){
-        itemTodoRepository.deleteById(id);
+    public ItemTodoModel saveItemTodo(ItemTodoModel itemTodoModel){
+        return itemTodoRepository.save(itemTodoModel);
+    }
+
+    public String deleteItemTodoByName(String name){
+        ItemTodoModel itemTodoModel = itemTodoRepository.findByDescription(name).orElse(null);
+        if(itemTodoModel == null) return "ItemTodo don't exist!";
+        itemTodoRepository.deleteById(itemTodoModel.getId());
         return "ItemTodo removed with success";
     }
 
-    public String checkItemTodo(Long id){
-        ItemTodoModel itemTodoModel = itemTodoRepository.findById(id).orElse(null);
+    public String checkItemTodo(String name){
+        ItemTodoModel itemTodoModel = itemTodoRepository.findByDescription(name).orElse(null);
         if(itemTodoModel == null) return "Item don't exist!";
 
         itemTodoModel.setCheck(true);
