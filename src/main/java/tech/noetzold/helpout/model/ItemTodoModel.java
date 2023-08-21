@@ -14,6 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "item_todo_model")
 public class ItemTodoModel implements Serializable {
 
     @Id
@@ -21,10 +22,12 @@ public class ItemTodoModel implements Serializable {
     private Long id;
 
     private String description;
+
+    @Column(name = "item_check")
     private boolean check;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category")
     private CategoryTodoModel category;
 
 }
