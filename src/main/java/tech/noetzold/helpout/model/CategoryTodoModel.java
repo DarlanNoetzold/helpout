@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -21,8 +21,13 @@ public class CategoryTodoModel implements Serializable {
     private Long id;
 
     private String name;
-    private Date date;
+    private LocalDate date;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ItemTodoModel> items;
+
+    public CategoryTodoModel(String name, LocalDate date) {
+        this.name = name;
+        this.date = date;
+    }
 }
